@@ -1,0 +1,4 @@
+Écrire des noms de méthode sensé, qui ont un rapport avec l'objet traité
+Utilisé des variables avec des noms qui ont rapport.
+Utiliser les arraylists et non des tableaux.
+Utiliser l'encodage d'eclipse par défaut (Cp1252)

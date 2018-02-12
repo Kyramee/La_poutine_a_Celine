@@ -34,12 +34,9 @@ public class Facture {
 
 	public void affichageFacture() {
 		String[] comSplit;
+		int index = 0;
 		double[] facture = new double[this.listeClients.size()];
-
-		for (double d : facture) {
-			d = 0.0;
-		}
-
+		
 		System.out.println("Bienvenue chez Barette!\nFactures:");
 
 		for (String commande : this.listeCommandes) {
@@ -57,6 +54,10 @@ public class Facture {
 						.parseDouble(this.listePrixPlats.get(this.listeNomPlats.indexOf(comSplit[1])))
 						* Double.parseDouble(comSplit[2]);
 			}
+		}
+		
+		for (String nom : this.listeClients) {
+			System.out.println(nom + " " + facture[index++] + "$");
 		}
 	}
 }

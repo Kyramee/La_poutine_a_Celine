@@ -32,13 +32,13 @@ public class MainTest {
 
 		facture = new Facture();
 
-		ecriture(ficLecture, facture);
+		lecture(ficLecture, facture);
 
 		facture.affichageFacture();
 
 	}
 
-	public static void ecriture(BufferedReader ficLecture, Facture facture) throws IOException {
+	public static void lecture(BufferedReader ficLecture, Facture facture) throws IOException {
 		String ligne;
 
 		ligne = ficLecture.readLine();

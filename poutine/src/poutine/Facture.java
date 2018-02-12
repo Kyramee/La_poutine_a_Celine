@@ -7,50 +7,49 @@ import java.util.ArrayList;
 public class Facture {
 
 	private ArrayList<String> listeClients;
-	private ArrayList<String> listePlats;
+	private ArrayList<String> listeNomPlats;
+	private ArrayList<String> listePrixPlats;
 	private ArrayList<String> listeCommandes;
 	
 	//Constructeur
 	public Facture(){
-		this.listeClients = new ArrayList<String>();
-		this.listePlats = new ArrayList<String>();
-		this.listeCommandes = new ArrayList<String>();	
+		this.listeClients = new ArrayList<>();
+		this.listeNomPlats = new ArrayList<>();
+		this.listePrixPlats = new ArrayList<>();
+		this.listeCommandes = new ArrayList<>();	
 	}
 	
-	public void affichageListe(){
-
-		System.out.println("Les Clients\n");
-		
-		for ( String string : this.listeClients ) {
-			System.out.println( string );
-		}
-		
-		System.out.println("Les Plats\n");
-
-		for ( String string : this.listePlats ) {
-			System.out.println( string );
-		}
-
-		System.out.println("Les Commandes\n");
-
-		for ( String string : this.listeCommandes ) {
-			System.out.println( string );
-		}
-	}
-
-
 	
-	public void addListeClients( String string ) {
-		this.listeClients.add( string );
+	public void addListeClients( String client ) {
+		this.listeClients.add( client );
 
 	}
 
-	public void addListePlats( String string ) {
-		this.listePlats.add( string );
+	public void addListePlats( String plat ) {
+		
+		//TODO
 	}
 
-	public void addListeCommandes( String string ) {
-		this.listeCommandes.add( string );
+	public void addListeCommandes( String commande ) {
+		this.listeCommandes.add( commande );
 	}
-
+	
+	public void affichageFacture() {
+		String[] comSplit; 
+		
+		System.out.println("Bienvenue chez Barette!\nFactures:");
+		
+		
+		for (String commande : this.listeCommandes) {
+			comSplit = commande.split(" ");
+			
+			if (comSplit.length != 3) {
+				System.out.println("Format de commande invalide");
+			} else if (!this.listeClients.contains(comSplit[0])) {
+				System.out.println("Le nom du client n'est pas dans la liste");
+			} else if (!this.listeNomPlats.contains(comSplit[1])) {
+				System.out.println("Le nom du plat n'est pas dans la liste");
+			}
+		}
+	}
 }
